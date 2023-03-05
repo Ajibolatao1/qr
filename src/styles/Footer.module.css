@@ -1,0 +1,14 @@
+.dBig {
+  font-size: 1.5rem;
+}
+
+.fHead1 {
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+.fHead {
+  padding-bottom: 15px;
+  font-size: 1.2rem;
+  
+  /* display: none; */
+}
