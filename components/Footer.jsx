@@ -6,7 +6,7 @@ import styles from "@/styles/Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary text-white">
+    <footer className="bg-secondary text-white py-5">
       <Container>
         {/* TOP */}
         <div className="top p-4 d-md-flex justify-content-around">
@@ -22,8 +22,8 @@ export default function Footer() {
         <hr className="hr" />
 
         {/* MID */}
-        <div className="mid d-lg-flex justify-content-between">
-          <div>
+        <div className="mid d-lg-flex justify-content-between pb-3">
+          <div className="py-3">
             <div
               className={`d-flex align-items-center gap-2 ${styles.dBig} ${styles.fHead1}`}>
               <Image
@@ -34,30 +34,43 @@ export default function Footer() {
               />
               <div>MyQR</div>
             </div>
-            <div >
+            <div>
               <div>
                 Create your own QR codes and boost your business or idea
               </div>
             </div>
           </div>
-          <div>
+          <div className="py-3">
             <div className={`${styles.fHead}`}>Service</div>
             <div className="f-body">
-              <div>Create QR code</div>
+              <Link href={"/qr-code-generator"} className="link">
+                Create QRcode
+              </Link>
             </div>
           </div>
-          <div>
+          <div className="py-3">
             <div className={`${styles.fHead}`}>Company</div>
             <div className="f-body">
-              <div>Privacy Policy</div>
+              <div>
+                <Link href={"/privacy-policy"} className="link">
+                  Privacy Policy
+                </Link>
+              </div>
             </div>
           </div>
-          <div>
+          <div className="py-3">
             <div className={`${styles.fHead}`}>Help</div>
             <div className="f-body">
-              <div>Contact us</div>
+              <Link href={"/contact"} className="link">
+                Contact us
+              </Link>
             </div>
           </div>
+        </div>
+        <hr className="hr" />
+        {/* Bottom */}
+        <div className="py-3 text-center">
+          <div className="left"> Copywrite &copy; MyQr | 2023 </div>
         </div>
       </Container>
     </footer>

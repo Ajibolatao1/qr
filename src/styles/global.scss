@@ -9,3 +9,21 @@
 body {
   font-family: 'Poppins', sans-serif !important;
 }
+
+.mh200 {
+  min-height: 200px;
+}
+
+.maxW800{
+  max-width: 600px;
+}
+
+.link {
+  color: whitesmoke;
+  text-decoration: none;
+  transition: .2s ease-in all;
+}
+
+.link:hover {
+  color: rgb(201, 193, 193);
+}

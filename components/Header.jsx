@@ -8,7 +8,7 @@ import styles from "@/styles/Header.module.css";
 
 export default function Header() {
   return (
-    <header>
+    <header className="sticky-top">
       <Navbar bg="secondary" variant="dark" expand="lg" className="sticky-top">
         <Container>
           <Navbar.Brand>
