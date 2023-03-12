@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Accordion } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   CheckCircle,
@@ -124,7 +124,75 @@ export default function index() {
           </div>
         </Container>
       </section>
-      <section className="section3"></section>
+      {/* SECTION 3 */}
+      <section className="section3 py-5 bg-secondary">
+        <div className="text-center">
+          <div className={`top py-3 ${styles.s3top}`}>What to know to get started.</div>
+          <div className="desc py-3 fs1-2">
+            In this section you will find the basic concepts and the necessary
+            steps to start enjoying the benefits of using QR.
+          </div>
+        </div>
+        <Container>
+          <Row>
+            <Col className="left" lg={5}>
+              <Image
+                src={"/img/qr2.webp"}
+                alt="Qr code"
+                width={400}
+                height={400}
+              />
+            </Col>
+            <Col className="right d-flex justify-content-center align-items-center"lg={7}>
+              {/* Accordion */}
+              <Accordion className="w-100">
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>What is a QR Code?</Accordion.Header>
+                  <Accordion.Body>
+                    The term “QR” stands for “quick response” and refers to
+                    instant access to the information contained in the Code. It
+                    is, in short, the evolution of the barcode, made up of
+                    patterns of black and white pixels. Denso Wave, a Japanese
+                    subsidiary of Toyota Denso, developed them in order to mark
+                    the components of their cars and thus speed up logistics in
+                    their production. Currently, it has gained great popularity,
+                    due to its versatility and accessibility, thanks to the
+                    functions of smart phones.
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="1">
+                  <Accordion.Header>
+                    know the benefitrs of using QR
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    You will have noticed that more and more companies choose to
+                    include QR, as a fundamental resource for the marketing and
+                    commercialization of their products and services. Its
+                    growing popularity is due to the multiplicity of uses that
+                    you can give it: to receive payments from your clients,
+                    share links to web pages, catalogs and price lists, receive
+                    comments on your products or services, invite the client to
+                    share images or videos , promote your business events and
+                    much more, with just a scan!
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="2">
+                  <Accordion.Header>How to start using QR</Accordion.Header>
+                  <Accordion.Body>
+                    Many devices already have a built-in QR code reader. In this
+                    case, all you have to do is open the camera on your mobile
+                    phone and hold it over a code for a few seconds, until a
+                    notification appears on the screen. In case this does not
+                    happen, go to settings to check that QR scanning is enabled.
+                    If you do not have the feature, just download and install a
+                    QR code reader from your app store.
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </main>
   );
 }

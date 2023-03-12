@@ -5,8 +5,13 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import styles from "@/styles/Header.module.css";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Header() {
+   const { data: session } = useSession();
+
+   console.log(session)
+
   return (
     <header className="sticky-top">
       <Navbar bg="secondary" variant="dark" expand="lg" className="sticky-top">
@@ -31,11 +36,28 @@ export default function Header() {
               <Link href="/contact" className={`${styles.link}`}>
                 Contact us
               </Link>
-              <Link
-                href="/Register"
-                className={`btn btn-outline-light ${styles.link}`}>
-                Register
-              </Link>
+              {/* If user is not logged in */}
+              {!session && (
+                <Link
+                  href="/register"
+                  className={`btn btn-outline-light ${styles.link}`}>
+                  Register
+                </Link>
+              )}
+              {!session && (
+                <Link href="/api/auth/signin" className={`btn ${styles.link}`}>
+                  Log in
+                </Link>
+              )}
+              {/* if users is Logged in */}
+              {session && (
+                <Link
+                  href="/api/auth/signout"
+                  className={`btn btn-outline-light ${styles.link}`}>
+                  Sign out
+                </Link>
+              )}
+              ;
             </Nav>
           </Navbar.Collapse>
         </Container>
