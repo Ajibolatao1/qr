@@ -10,7 +10,7 @@ export default function Sidebar() {
       </div>
       {/* MIDDLE */}
       <div>
-         
+         The main
       </div>
       {/* BOTTOM */}
       <div>
